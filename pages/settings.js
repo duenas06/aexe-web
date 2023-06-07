@@ -63,7 +63,9 @@ export default function Settings() {
   const [imageData, setImageData] = useState("");
   const router = useRouter();
   const toast = useToast();
-  const [updateUser, setUpdateUser] = useState({
+  const [updateUser, setUpdateUser] = useState({})
+
+  const [updateNewUser, setUpdateNewUser] = useState({
     first_name: "",
     first_name: "",
     address: "",
@@ -103,29 +105,20 @@ export default function Settings() {
   async function updateProfile() {
     var profile = updateUser
 
-
-    if (
-      profile?.first_name != ""
-      || profile?.last_name != ""
-      || profile?.birthday != ""
-      || profile?.gender != ""
-      || profile?.email != ""
-      || profile?.password != "") {
-      if (imageData != "") {
-        let urlPath = await uploadFileGetLink(imageData, user?.id);
-        profile.profile_url = urlPath
-      }
-      const update = await updateData({ path: "users", id: user?.id, data: profile })
-      toast({
-        title: "Data Update",
-        description: update?.message,
-        status: "success",
-        duration: 2500,
-        isClosable: true,
-        position: "bottom-right",
-      });
-      router.reload(window.location.pathname);
+    if (imageData != "") {
+      let urlPath = await uploadFileGetLink(imageData, user?.id);
+      profile.profile_url = urlPath
     }
+    const update = await updateData({ path: "users", id: user?.id, data: profile })
+    toast({
+      title: "Data Update",
+      description: update?.message,
+      status: "success",
+      duration: 2500,
+      isClosable: true,
+      position: "bottom-right",
+    });
+    router.reload(window.location.pathname);
   }
 
   return (

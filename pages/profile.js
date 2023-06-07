@@ -58,7 +58,8 @@ export default function Dashboard() {
     setTimeout(() => {
       userDataContext.data ?
         setUser(userDataContext.data)
-        : Router.push("/");
+        // : Router.push("/");
+        : console.log(user)
 
     }, []);
   }, []);

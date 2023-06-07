@@ -50,7 +50,7 @@ export default function TermsCondition() {
                     justifyContent={'center'}
                     alignItems={'center'}>
                     <VStack spacing={7} width={'78%'}>
-                        <Heading fontSize={'5xl'} color={'#97392F'} alignSelf={'flex-start'}>Terms and Condition</Heading>
+                        <Heading fontSize={'5xl'} color={'#97392F'} alignSelf={'flex-start'} mt="5">Terms and Condition</Heading>
                         <Text fontSize={'lg'} color={'black'}>Essentially, a Terms and Conditions agreement is a contract between your business and the user of your website or app - whether they are an individual or a business. You may see Terms and Conditions agreements referred to as Terms of Service (ToS) or Terms of Use (ToU). Theres no practical difference between these terms and companies use them interchangeably.
                             Having a Terms and Conditions agreement is not a legal requirement, but having one is important as they protect your business and create a set of rules that anyone using your app or website must agree to</Text>
                         <Text fontSize={'lg'} color={'black'}>Essentially, a Terms and Conditions agreement is a contract between your business and the user of your website or app - whether they are an individual or a business. You may see Terms and Conditions agreements referred to as Terms of Service (ToS) or Terms of Use (ToU). Theres no practical difference between these terms and companies use them interchangeably.
