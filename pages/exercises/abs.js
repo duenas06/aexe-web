@@ -61,11 +61,11 @@ export default function fullbody() {
                   <Heading>ABS Exercises</Heading>
                   <Text size='sm' marginTop={2} spacing={2} textAlign="justify" lineHeight={6}>
                     Ab exercises serve to strengthen the muscles that surround
-                    the spine and improve posture since the body's weight is
+                    the spine and improve posture since the bodys weight is
                     distributed evenly. Because the spine is flexed while lying
                     down with the feet on the ground and the upper body raised
                     and then lowered, it engages the four abdominal muscles.
-                    improve the body's muscular harmony, which is crucial for
+                    improve the bodys muscular harmony, which is crucial for
                     balance, stability, and good posture.
                   </Text>
                 </CardHeader>
