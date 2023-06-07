@@ -102,7 +102,7 @@ export default function Dashboard() {
                   </Container>
                   <Container bg="#414B55" w={"20vw"} h={"20vh"} borderRadius={'lg'} padding={10}>
                     <VStack>
-                      <Heading fontSize={'2.5vw'} alignSelf={"flex-start"}>{date}</Heading>
+                      <Heading fontSize={'2vw'} alignSelf={"flex-start"}>{date}</Heading>
                       <Text fontSize={'1vw'} alignSelf={"flex-start"} fontWeight={"bold"} >{moment(new Date()).format("LL dddd").toString()}</Text>
                     </VStack>
                   </Container>
