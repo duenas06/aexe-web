@@ -21,7 +21,6 @@ import { Avatar } from '@chakra-ui/react'
 import React, { useEffect, useState, useContext } from "react";
 import { Textarea } from '@chakra-ui/react'
 import { Card, CardBody, CardFooter } from '@chakra-ui/react'
-import { TextareaAutosizeProps } from 'react-textarea-autosize';
 import { storage } from "../firebase";
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { useAuth, db, } from "../firebase";
