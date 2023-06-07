@@ -49,10 +49,10 @@ export default function TermsCondition() {
                     height="100vh"
                     justifyContent={'center'}
                     alignItems={'center'}>
-                    <VStack spacing={7} width={'78%'}>
+                    <VStack spacing={3} width={'78%'}>
                         <Image
                             boxSize={'20vw'}
-                            w='90vw'
+                            w='50vw'
                             objectFit={'contain'}
                             src={'/aexelogo.png'}>
                         </Image>

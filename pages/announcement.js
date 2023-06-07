@@ -20,6 +20,7 @@ import { useAuth, db, } from "../firebase";
 import { addDoc, collection, onSnapshot, serverTimestamp } from 'firebase/firestore';
 import TopDrawer from '../constanst/components/drawer';
 import UserDataContext from '../context/UserDataContext';
+import { Icon, SmallCloseIcon } from '@chakra-ui/icons';
 
 
 export default function Dashboard() {
@@ -78,7 +79,7 @@ export default function Dashboard() {
         <TopDrawer />
 
         <Center>
-          <Box w="60vw" mt="5vh" p="5em" height="fit-content" borderRadius="md">
+          <Box w="60vw" mt="5vh" p="5em" height="fit-content" minW="500px" borderRadius="md">
             <Center>
               <VStack>
                 <Card
@@ -137,7 +138,7 @@ export default function Dashboard() {
                         variant="outline"
                         shadow="base"
                         outlineColor="gray.900"
-                        marginTop="10vh"
+                        marginTop="5vh"
                       >
                         <VStack>
                           <CardBody padding={"1em"} paddingTop={"2em"}>
@@ -149,7 +150,9 @@ export default function Dashboard() {
                                 marginTop="1"></Avatar>
                               <Heading size='md' color={"black"}>{data?.user?.first_name} {data?.user?.last_name}</Heading>
                               <Text fontSize={10}>{data?.timestamp?.toDate().toDateString()}</Text>
+                              <Icon as={SmallCloseIcon} justifyContent={"flex-end"}></Icon>
                             </HStack>
+
                             <VStack padding={"2em"}>
                               <Text alignSelf={"flex-start"}>{data?.newPost}</Text>
                             </VStack>
