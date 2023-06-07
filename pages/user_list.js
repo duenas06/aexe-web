@@ -324,7 +324,7 @@ export default function Dashboard() {
                 </Box>
                 <Box>
                   <FormLabel variant="floating">Mobile Number</FormLabel>
-                  <Input placeholder="Mobile Number" bg="white" color={"black"} w={"15vw"} minW={'180px'} onChange={(e) => {
+                  <Input placeholder="Mobile Number" type="number" bg="white" color={"black"} w={"15vw"} minW={'180px'} onChange={(e) => {
                     setUpdateUser({ ...updateUser, mobile_number: e.target.value });
                   }} />
                 </Box>
@@ -368,13 +368,12 @@ export default function Dashboard() {
                   <FormLabel variant="floating">Date of Birth</FormLabel>
                   <Input placeholder="Birthday" bg="white" type="date" color={"black"} w={"15vw"} minW={'180px'} onChange={(e) => {
                     setUpdateUser({ ...updateUser, birthday: e.target.value });
-                    const age = moment().diff(moment(e.target.value, "DD-MM-YYYY"), 'years')
-                    setUpdateUser({ ...updateUser, age: age })
+
                   }} />
                 </Box>
                 <Box>
                   <FormLabel variant="floating">Age</FormLabel>
-                  <Input value={user.age} placeholder="Age" bg="white" type="number" color={"black"} w={"15vw"} minW={'180px'} onChange={(e) => {
+                  <Input placeholder="Age" bg="white" type="number" color={"black"} w={"15vw"} minW={'180px'} onChange={(e) => {
                     setUpdateUser({ ...updateUser, age: e.target.value });
                   }} />
                 </Box>
