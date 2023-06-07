@@ -39,6 +39,7 @@ export default function Dashboard() {
   const toast = useToast();
   const cancelRef = React.useRef();
   const [removeId, setRemoveId] = useState("")
+  const [newId, setNewId] = useState("")
   const onAlertModal = useDisclosure();
   useEffect(() => {
     setTimeout(() => {
