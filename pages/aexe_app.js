@@ -51,13 +51,14 @@ export default function TermsCondition() {
                     alignItems={'center'}>
                     <VStack spacing={3} width={'78%'}>
                         <Image
-                            boxSize={'20vw'}
-                            w='50vw'
+                            mt={"2vh"}
+                            boxSize={"20vw"}
+                            w={"15vw"}
                             objectFit={'contain'}
                             src={'/aexelogo.png'}>
                         </Image>
                         <Center>
-                            <Heading fontSize={'5xl'} color={'#97392F'} alignSelf={'flex-start'}>AEXE App</Heading>
+                            <Heading fontSize={'4xl'} color={'#97392F'} alignSelf={'flex-start'}>AEXE App</Heading>
                         </Center>
                         <Text fontSize={'lg'} color={'black'}>AEXE is an augmented reality-based application instructor where it will helps the gym instructor and its customers to execute the exercise properly.  AEXE offers different exercises that is well-suitable for your body (BMI).
                         </Text>
