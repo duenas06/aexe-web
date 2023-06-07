@@ -48,7 +48,6 @@ import {
 } from '@chakra-ui/react';
 import { Avatar } from '@chakra-ui/react'
 import React, { useEffect, useState, useContext, useRef } from "react";
-import { TextareaAutosizeProps } from 'react-textarea-autosize';
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 import { Textarea, Divider, Header } from '@chakra-ui/react';
 import Router from "next/router";

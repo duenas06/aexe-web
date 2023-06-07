@@ -155,7 +155,7 @@ export default function Dashboard() {
                           width="32vw"
                           color={"black"}
                           value={newPost}
-                          as={TextareaAutosizeProps} mt="5"
+                          mt="5"
                           minRows={3} resize="none"
                           placeholder="Create post..." />
                       </Center>
