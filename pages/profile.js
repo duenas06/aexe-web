@@ -83,15 +83,11 @@ export default function Dashboard() {
     //   console.log(posts)
     //   setPost(posts)
     // })
+    const email = user?.email || "jerikadeguzman@gmail.com"
     const data = []
-    const result = await getDatas({ path: "posts" })
-    result?.map(doc => {
-      if (doc.email == user?.email) {
-        data.push(doc)
-      }
-    })
-    console.log(data)
-    setPost(data)
+    const result = await getDataWithParam({ path: "posts", email: email })
+    console.log(result)
+    setPost(result)
   }
 
   return (

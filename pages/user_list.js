@@ -58,7 +58,7 @@ import { AttachmentIcon, DeleteIcon, EditIcon, ViewIcon } from '@chakra-ui/icons
 import { addDoc, collection, doc, getDocs, onSnapshot, serverTimestamp, setDoc } from 'firebase/firestore';
 import TopDrawer from '../constanst/components/drawer';
 import removeUser from '../constanst/services/users/remove_user';
-import removeData, { getDatas, makeid, updateData } from '../constanst/services/generic';
+import removeData, { getDataWithParam, getDatas, makeid, updateData } from '../constanst/services/generic';
 import ReusableModal from '../constanst/components/modal';
 import moment from "moment/moment";
 
@@ -88,7 +88,6 @@ export default function Dashboard() {
 
   const [Posts, setPost] = useState([]);
 
-  const userPost = []
 
   const [updateUser, setUpdateUser] = useState({
     address: "",
@@ -199,15 +198,21 @@ export default function Dashboard() {
     //   console.log(posts)
     //   setPost(posts)
     // })
+    console.log(props.email)
+    const email = props?.email || "jerikadeguzman@gmail.com"
     const data = []
-    const result = await getDatas({ path: "posts" })
-    result?.map(doc => {
-      if (doc?.email == props?.email) {
-        data.push(doc)
-      }
-    })
-    console.log(data)
-    setPost(data)
+    const result = await getDataWithParam({ path: "posts", email: email })
+    console.log(result)
+    setPost(result)
+    // const data = []
+    // const result = await getDatas({ path: "posts" })
+    // result?.map(doc => {
+    //   if (doc?.email == props?.email) {
+    //     data.push(doc)
+    //   }
+    // })
+    // console.log(data)
+    // setPost(data)
   }
   return (
     <>
@@ -257,7 +262,7 @@ export default function Dashboard() {
                             <Td>
                               <HStack>
                                 <Button bg="green.400" onClick={() => {
-                                  onViewModal.onOpen(), setViewUser(user)
+                                  onViewModal.onOpen(), setViewUser(user), getPosts(user)
                                 }}><ViewIcon /></Button>
 
                                 <Button
@@ -463,8 +468,8 @@ export default function Dashboard() {
                   {Posts?.map((item, index) => {
                     return (
                       <>
-                        <HStack key={index} color='black' bg={'white'} padding={'1vw'} height={'9vh'} borderRadius={'lg'} width={'35vw'}>
-                          <Text fontWeight={'semibold'}>{item?.caption}</Text>
+                        <HStack key={index} color='black' bg={'white'} padding={'1vw'} height={'9vh'} borderRadius={'lg'} width={'25vw'}>
+                          <Text fontSize={'1.2vw'} fontWeight={'semibold'}>{item?.caption}</Text>
                         </HStack>
                       </>
                     )

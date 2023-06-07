@@ -12,7 +12,7 @@ import {
 } from "firebase/firestore";
 import Router from "next/router";
 import { db, storage } from "../../firebase";
-import { ref } from "firebase/storage";
+import { getDownloadURL, ref, uploadString } from "firebase/storage";
 
 export default async function removeData(props) {
   const docRefa = doc(db, props.path, props.id);
@@ -51,7 +51,7 @@ export function makeid(length) {
   return result;
 }
 
-// {props.path, props.id, props.data}
+// {props.path, props.data}
 export async function addData(props) {
   const id = makeid(10)
   var date = new Date();
@@ -82,7 +82,8 @@ export async function getDatas(props) {
 
 export async function getDataWithParam(props) {
   var data = []
-  const docsRef = query(collection(db, props.path), where("id", "==", props.id))
+  const email = props?.email || ""
+  const docsRef = query(collection(db, props.path), where("email", "==", email))
   const docs = await getDocs(docsRef)
 
   docs.docs.map(doc => {
