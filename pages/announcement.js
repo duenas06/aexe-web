@@ -129,6 +129,7 @@ export default function Dashboard() {
                   (Posts.map((data, index) => {
                     return (
                       <Card
+                        key={index}
                         width="35vw"
                         direction={{ base: 'column', sm: 'row' }}
                         overflow='hidden'

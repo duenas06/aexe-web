@@ -369,12 +369,12 @@ export default function Dashboard() {
                     <Input placeholder="password" bg="white" color={"black"} w={"15vw"} type={hidePassword ? "password" : "text"} minW={'180px'} onChange={(e) => {
                       setUpdateUser({ ...updateUser, password: e.target.value });
                     }} />
-                    <InputRightElement children={<Switch
+                    <InputRightElement> <Switch
                       me='5'
                       colorScheme={"cyan"}
                       size={"lg"}
                       onChange={() => setHidePassword(!hidePassword)}
-                    />} />
+                    /> </InputRightElement>
                   </InputGroup>
                 </Box>
               </HStack>
@@ -552,7 +552,7 @@ export default function Dashboard() {
               <FormControl isRequired>
                 <FormLabel marginTop={3}>Phone Number</FormLabel>
                 <InputGroup>
-                  <InputLeftAddon children="+63" />
+                  <InputLeftAddon>+63</InputLeftAddon>
                   <Input type="phone" roundedLeft="0" placeholder="phone number"
                     onChange={(e) => setUser({ ...user, mobile_number: e.target.value })} />
                 </InputGroup>

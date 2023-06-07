@@ -217,12 +217,12 @@ export default function Settings() {
                   <Input placeholder="New Password" bg="white" color={"black"} w="26.5vw" minW={'180px'} type={hidePassword ? "password" : "text"} onChange={(e) => {
                     setUpdateUser({ ...updateUser, password: e.target.value });
                   }} />
-                  <InputRightElement children={<Switch
+                  <InputRightElement><Switch
                     me='5'
                     colorScheme={"cyan"}
                     size={"lg"}
                     onChange={() => setHidePassword(!hidePassword)}
-                  />} />
+                  /> </InputRightElement>
                 </InputGroup>
               </Box>
             </HStack>
