@@ -11,13 +11,7 @@ import {
   Input,
   Box,
   Image,
-  Switch,
-  useColorModeValue,
-  useBreakpointValue,
   Container,
-  useDisclosure,
-  SimpleGrid,
-  Icon
 } from "@chakra-ui/react";
 import { Grid, GridItem } from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
@@ -26,26 +20,12 @@ import React, { useEffect, useState, useContext } from "react";
 import Router from "next/router";
 import { FiMenu } from 'react-icons/fi'
 import { IconButton, ButtonGroup } from '@chakra-ui/react'
-import {
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
-import { Divider } from '@chakra-ui/react'
-import { AddIcon, ChevronLeftIcon, SmallAddIcon, StackDivider, textTransform } from '@chakra-ui/icons';
+import { AddIcon, ChevronLeftIcon, } from '@chakra-ui/icons';
 import { ChakraProvider } from '@chakra-ui/provider';
 import TopDrawer from '../../constanst/components/drawer';
 
 
 export default function fullbody() {
-  const isDesktop = useBreakpointValue({ base: false, lg: true })
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
 
   return (
     <>
@@ -69,7 +49,8 @@ export default function fullbody() {
             <Container maxW='container.md'>
               <Image
                 src="/legbutt.jpg"
-                borderRadius='lg' />
+                borderRadius='lg'
+                alt="img" />
               <Card variant='elevated' mb="10%">
                 <CardHeader>
                   <Heading>Leg and Butt Exercises</Heading>

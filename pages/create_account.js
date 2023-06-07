@@ -174,12 +174,14 @@ export default function CreateAccount() {
                                             <Input placeholder="password" bg="white" color={"black"} w="26.5vw" type={hidePassword ? "password" : "text"} minW={'180px'} onChange={(e) => {
                                                 setUser({ ...user, password: e.target.value });
                                             }} />
-                                            <InputRightElement children={<Switch
-                                                me='5'
-                                                colorScheme={"cyan"}
-                                                size={"lg"}
-                                                onChange={() => setHidePassword(!hidePassword)}
-                                            />} />
+                                            <InputRightElement>
+                                                <Switch
+                                                    me='5'
+                                                    colorScheme={"cyan"}
+                                                    size={"lg"}
+                                                    onChange={() => setHidePassword(!hidePassword)}
+                                                />
+                                            </InputRightElement>
                                         </InputGroup>
                                     </Box>
                                 </HStack>

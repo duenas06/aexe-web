@@ -136,12 +136,12 @@ export default function Signin() {
                     placeholder={"Password"} //pw user input
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <InputRightElement children={<Switch
+                  <InputRightElement ><Switch
                     padding={"1"}
                     colorScheme={"cyan"}
                     size={"md"}
                     onChange={() => setHidePassword(!hidePassword)}
-                  />} />
+                  /> </InputRightElement>
                 </InputGroup>
                 <Box>
 
@@ -165,7 +165,7 @@ export default function Signin() {
                       boxSize='20%'
                       marginLeft="13vw"
                       alignContent="center">
-                      <Image src="cookies.png" />
+                      <Image src="cookies.png" alt='img' />
                     </Box>
                     This site uses cookies to ensure you get the best experience.
                   </CookieConsent>

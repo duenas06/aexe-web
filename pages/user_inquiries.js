@@ -110,7 +110,7 @@ export default function UserInquiries() {
                       <h2>
                         <AccordionButton _expanded={{ bg: 'red.500', color: 'white' }}>
                           <Box flex='1' textAlign='left' fontWeight="semibold">
-                            Gym's opening and closing hours
+                            Gym opening and closing hours
                           </Box>
                           <AccordionIcon />
                         </AccordionButton>
@@ -188,7 +188,7 @@ export default function UserInquiries() {
                         Augmented Reality is used to either visually alter natural environments or to provide
                         users with additional information and possibilities visual changes. The primary
                         advantage of AR is that it blends digital and three-dimensional (3D) components
-                        with a person's perception of the real world. Analyzing your surroundings and using
+                        with a persons perception of the real world. Analyzing your surroundings and using
                         triggers to display relevant information in the appropriate location in your field of view.
                       </AccordionPanel>
                     </AccordionItem>
@@ -206,9 +206,9 @@ export default function UserInquiries() {
                       </h2>
                       <AccordionPanel>
                         Based on Republic Act 10173, the Data Privacy Act of 2012.
-                        "AN ACT PROTECTING INDIVIDUAL PERSONAL INFORMATION IN INFORMATION
+                        AN ACT PROTECTING INDIVIDUAL PERSONAL INFORMATION IN INFORMATION
                         AND COMMUNICATIONS SYSTEMS IN THE GOVERNMENT AND THE PRIVATE SECTOR,
-                        CREATING FOR THIS PURPOSE A NATIONAL PRIVACY COMMISSION, AND FOR OTHER PURPOSES".
+                        CREATING FOR THIS PURPOSE A NATIONAL PRIVACY COMMISSION, AND FOR OTHER PURPOSES.
                         Yes, application has a privacy policy which can be found when registering.
                         We assure that it is only between the system and the customer’s matter.
                       </AccordionPanel>
