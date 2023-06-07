@@ -3,36 +3,17 @@ import {
   Heading,
   Center,
   Flex,
-  Button,
   Stack,
   HStack,
   VStack,
   Text,
-  Input,
   Box,
-  Image,
-  Switch,
-  useColorModeValue,
-  useBreakpointValue,
-  Container,
   useDisclosure,
-  FormControl,
-  WrapItem,
-  Card, CardHeader, CardBody, CardFooter,
+  Card, CardBody, CardFooter,
   Divider
 } from "@chakra-ui/react";
-import { Avatar, AvatarBadge, AvatarGroup, AiOutlineUser } from "@chakra-ui/avatar"
+import { Avatar } from "@chakra-ui/avatar"
 import React, { useEffect, useState, useContext } from "react";
-import { IconButton } from '@chakra-ui/react'
-import Sidebar from '../constanst/components/Sidebar';
-import { FiMenu } from 'react-icons/fi';
-import { ChatIcon, Search2Icon } from '@chakra-ui/icons';
-import NextLink from "next/link";
-import Router from "next/router";
-import { ChakraProvider } from '@chakra-ui/provider';
-import { Component } from 'react';
-import { storage } from "../firebase";
-import { ref, uploadBytes, getDownloadURL, getStorage } from 'firebase/storage';
 import { useAuth } from "../firebase";
 import TopDrawer from '../constanst/components/drawer'
 import UserDataContext from '../context/UserDataContext';
