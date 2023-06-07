@@ -209,7 +209,7 @@ export default function Settings() {
 
               </Box>
             </HStack>
-            <Heading marginLeft="6%" marginTop="3%" color="#97392F"> Change Password</Heading>
+            <Heading marginTop="3%" color="#97392F"> Change Password</Heading>
             <HStack alignItems={"stretch"} alignSelf={"flex-start"} spacing="20">
               <Box>
                 <FormLabel variant="floating">New Password</FormLabel>
@@ -231,6 +231,7 @@ export default function Settings() {
               <Button
                 w="8vw"
                 bgColor="#F04141"
+                colorScheme='#ffffff'
                 minW={'180px'}
                 type="submit"
                 onClick={updateProfile}

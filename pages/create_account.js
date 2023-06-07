@@ -74,13 +74,13 @@ export default function CreateAccount() {
             <Box h={'100vh'} minW={'700px'} bg={"#D9D9D9"}>
                 <TopDrawer />
                 <Center mt="3%">
-                    <Flex w="63vw" h="80vh" borderRadius={"xl"} shadow="lg" minW={'540px'} bg="#97392F">
+                    <Box w="63vw" minH="770px" borderRadius={"xl"} shadow="lg" minW={'560px'} bg="#97392F">
                         <FormControl isRequired
                             padding={15}
                             justifyContent="center"
                             color="white">
-                            <VStack alignItems={"center"} spacing="5" padding={"10"}>
-                                <Heading>Create User Account</Heading>
+                            <VStack alignItems={"center"} spacing="1vw" padding={"10"}>
+                                <Heading size={"lg"}>Create User Account</Heading>
                                 <HStack alignItems={"stretch"} alignSelf={"flex-start"} spacing="20">
                                     <Box>
                                         <FormLabel variant="floating">First Name</FormLabel>
@@ -205,13 +205,14 @@ export default function CreateAccount() {
                                 <Button
                                     w="25vw"
                                     bgColor="#F04141"
+                                    colorScheme=""
                                     minW={'180px'}
                                     type="submit"
                                     onClick={createAccount}
                                 >Register</Button>
                             </VStack>
                         </FormControl>
-                    </Flex>
+                    </Box>
                 </Center>
             </Box>
         </>

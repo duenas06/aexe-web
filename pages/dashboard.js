@@ -96,14 +96,14 @@ export default function Dashboard() {
                 <HStack justifyContent={"center"} spacing={"4vw"} paddingTop={"3vh"}>
                   <Container bg="#696969" w={"20vw"} h={"20vh"} borderRadius={'lg'} padding={10}>
                     <VStack>
-                      <Heading alignSelf={"flex-start"}>{totalUsers}</Heading>
-                      <Text fontSize={"2xl"} alignSelf={"flex-start"} fontWeight={"bold"} >Total Aexe users</Text>
+                      <Heading fontSize={'2.5vw'} alignSelf={"flex-start"}>{totalUsers}</Heading>
+                      <Text fontSize={'1vw'} alignSelf={"flex-start"} fontWeight={"bold"} >Total Aexe users</Text>
                     </VStack>
                   </Container>
                   <Container bg="#414B55" w={"20vw"} h={"20vh"} borderRadius={'lg'} padding={10}>
                     <VStack>
-                      <Heading alignSelf={"flex-start"}>{date}</Heading>
-                      <Text fontSize={"2xl"} alignSelf={"flex-start"} fontWeight={"bold"} >{moment(new Date()).format("LL dddd").toString()}</Text>
+                      <Heading fontSize={'2.5vw'} alignSelf={"flex-start"}>{date}</Heading>
+                      <Text fontSize={'1vw'} alignSelf={"flex-start"} fontWeight={"bold"} >{moment(new Date()).format("LL dddd").toString()}</Text>
                     </VStack>
                   </Container>
                 </HStack>
@@ -111,7 +111,7 @@ export default function Dashboard() {
             </Flex>
 
             <Box alignSelf={"flex-start"} padding={0}>
-              <Heading alignSelf={"flex-start"} fontSize={"2xl"} color={"#3E3535"} mt="5vh">New Users</Heading>
+              <Heading alignSelf={"flex-start"} fontSize={"2xl"} color={"#3E3535"} mt="5vh">AEXE Users</Heading>
             </Box>
 
 

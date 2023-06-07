@@ -80,6 +80,18 @@ export async function getDatas(props) {
   return data
 }
 
+export async function getDataWithParam(props) {
+  var data = []
+  const docsRef = query(collection(db, props.path), where("id", "==", props.id))
+  const docs = await getDocs(docsRef)
+
+  docs.docs.map(doc => {
+    data.push({ ...doc.data(), id: doc.id })
+  })
+  console.log(data)
+  return data
+}
+
 // {props.path, props.id, props.data}
 export async function updateData(props) {
   const docRef = doc(db, props.path, props.id)

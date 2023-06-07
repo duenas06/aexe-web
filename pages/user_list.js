@@ -87,6 +87,10 @@ export default function Dashboard() {
     onClose: onCloseCheckModal,
   } = useDisclosure();
 
+  const [Posts, setPost] = useState([]);
+
+  const userPost = []
+
   const [updateUser, setUpdateUser] = useState({
     address: "",
     age: "",
@@ -186,6 +190,26 @@ export default function Dashboard() {
     }
   };
 
+  async function getPosts(props) {
+    // onSnapshot(collection(db, "posts"), (snapshot) => {
+    //   var posts = []
+    //   snapshot.docs.map(doc => {
+    //     if (doc.data()?.email == user?.email)
+    //       posts.push({ ...doc.data(), id: doc.id })
+    //   });
+    //   console.log(posts)
+    //   setPost(posts)
+    // })
+    const data = []
+    const result = await getDatas({ path: "posts" })
+    result?.map(doc => {
+      if (doc?.email == props?.email) {
+        data.push(doc)
+      }
+    })
+    console.log(data)
+    setPost(data)
+  }
   return (
     <>
 
@@ -431,12 +455,32 @@ export default function Dashboard() {
                 <Text>{viewUser?.email}</Text>
               </HStack>
 
+              <Divider></Divider>
+              <HStack>
+                <Text alignSelf={'flex-start'} fontSize={'3xl'} fontWeight={'bold'}>{viewUser?.first_name + "'s Posts"}</Text>
+              </HStack>
+
+              <HStack>
+                <VStack overflowY={'scroll'} minH="30vh" h="25vh" w="30vw">
+                  {Posts?.map((item, index) => {
+                    return (
+                      <>
+                        <HStack key={index} color='black' bg={'white'} padding={'1vw'} height={'9vh'} borderRadius={'lg'} width={'35vw'}>
+                          <Text fontWeight={'semibold'}>{item?.caption}</Text>
+                        </HStack>
+                      </>
+                    )
+                  })}
+                </VStack>
+              </HStack>
+
+
             </VStack>
           </>}
         footer={<>
-          <Button colorScheme='green' onClick={() => { onViewModal.onClose(), setViewUser({}) }}>Close</Button></>}
+          <Button colorScheme='green' onClick={() => { onViewModal.onClose(), setViewUser({}), setPost([]) }}>Close</Button></>}
         isOpen={onViewModal.isOpen}
-        onClose={() => { onViewModal.onClose(), setViewUser({}) }}
+        onClose={() => { onViewModal.onClose(), setViewUser({}), setPost([]) }}
       />
 
       < AlertDialog

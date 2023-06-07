@@ -19,7 +19,7 @@ import {
   useDisclosure
 } from "@chakra-ui/react";
 import { Avatar, AvatarBadge, AvatarGroup, AiOutlineUser } from '@chakra-ui/react'
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import { FiMenu } from 'react-icons/fi'
 import {
   Drawer,
@@ -39,9 +39,10 @@ import { db, storage } from "../firebase";
 import { ref, uploadBytes, getDownloadURL, getStorage } from 'firebase/storage';
 import { useAuth } from "../firebase";
 import { AttachmentIcon } from '@chakra-ui/icons';
-import { collection, addDoc, getDocs, doc, onSnapshot, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, getDocs, doc, onSnapshot, serverTimestamp, query, where } from 'firebase/firestore';
 import TopDrawer from '../constanst/components/drawer';
 import UserDataContext from '../context/UserDataContext';
+import { getDataWithParam, getDatas } from '../constanst/services/generic';
 
 
 
@@ -51,6 +52,7 @@ export default function Dashboard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const [user, setUser] = useState();
+  const effectRan = useRef(false);
   const userDataContext = useContext(UserDataContext);
   useEffect(() => {
     setTimeout(() => {
@@ -63,22 +65,33 @@ export default function Dashboard() {
 
   const [Posts, setPost] = useState([]);
 
-  useEffect(
-    () =>
-      onSnapshot(collection(db, "posts"), (snapshot) => {
-        var posts = []
-        snapshot.docs.map(doc => {
-          if (doc.data()?.email == user?.email)
-            posts.push({ ...doc.data(), id: doc.id })
-        });
-        console.log(posts)
-        setPost(posts)
-      }
+  useEffect(() => {
+    // if (effectRan.current === false) {
+    getPosts();
+    // effectRan.current = true;
+    // }
+  }, []);
 
-        // setPost(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })))
-      ),
-    []
-  );
+  async function getPosts() {
+    // onSnapshot(collection(db, "posts"), (snapshot) => {
+    //   var posts = []
+    //   snapshot.docs.map(doc => {
+    //     if (doc.data()?.email == user?.email)
+    //       posts.push({ ...doc.data(), id: doc.id })
+    //   });
+    //   console.log(posts)
+    //   setPost(posts)
+    // })
+    const data = []
+    const result = await getDatas({ path: "posts" })
+    result?.map(doc => {
+      if (doc.email == user?.email) {
+        data.push(doc)
+      }
+    })
+    console.log(data)
+    setPost(data)
+  }
 
   return (
     <>
@@ -122,8 +135,8 @@ export default function Dashboard() {
                     </Avatar>
                   </Center>
 
-                  <Stack mt='6' spacing='3' textAlign='center'>
-                    <Heading size='xl' textAlign="center">{user?.first_name} {user?.last_name}</Heading>
+                  <Stack mt='5' spacing='3' textAlign='center'>
+                    <Heading fontSize={'1.5vw'} textAlign="center">{user?.first_name} {user?.last_name}</Heading>
 
                   </Stack>
                 </CardBody>
@@ -148,12 +161,12 @@ export default function Dashboard() {
                   paddingInline={'3vw'}
                   outlineColor="gray.900">
                   <VStack>
-                    <Text fontSize={'3xl'} fontWeight={"bold"}>Personal Information</Text>
+                    <Text fontSize={'1.2vw'} fontWeight={"bold"}>Personal Information</Text>
                   </VStack>
-                  <VStack w='20vw' mt={'2vh'}>
-                    <Text alignSelf={'flex-start'} fontSize={'xl'}>{"Age: " + user?.age}</Text>
-                    <Text alignSelf={'flex-start'} fontSize={'xl'}>{"Address: " + user?.address}</Text>
-                    <Text alignSelf={'flex-start'} fontSize={'xl'}>{"Email Address: " + user?.email}</Text>
+                  <VStack w='20vw' mt={'1vh'}>
+                    <Text alignSelf={'flex-start'} fontSize={'1vw'}>{"Age: " + user?.age}</Text>
+                    <Text alignSelf={'flex-start'} fontSize={'1vw'}>{"Address: " + user?.address}</Text>
+                    <Text alignSelf={'flex-start'} fontSize={'1vw'}>{"Email Address: " + user?.email}</Text>
                   </VStack>
                 </Card>
 
@@ -171,13 +184,13 @@ export default function Dashboard() {
                   spacing="5"
                   outlineColor="gray.900">
                   <VStack >
-                    <Text alignSelf={'flex-start'} fontSize={'3xl'} fontWeight={'semibold'}>{user?.first_name + "'s Posts"}</Text>
+                    <Text alignSelf={'flex-start'} fontSize={'1.3vw'} fontWeight={'bold'}>{user?.first_name + "'s Posts"}</Text>
                     <Divider />
                     <VStack overflowY={'scroll'} minH="30vh" h="25vh" w="30vw">
-                      {Posts?.map(item => {
+                      {Posts?.map((item, index) => {
                         return (
                           <>
-                            <HStack color='black' bg={'white'} padding={'1vw'} height={'9vh'} borderRadius={'lg'} width={'25vw'}>
+                            <HStack key={index} color='black' bg={'white'} padding={'1vw'} height={'9vh'} borderRadius={'lg'} width={'25vw'}>
                               <Text fontWeight={'semibold'}>{item.caption}</Text>
                             </HStack>
                           </>

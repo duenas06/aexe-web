@@ -148,7 +148,7 @@ export default function Signin() {
                   <Button
                     colorScheme='blackAlpha'
                     variant='link' size="sm"
-                    onClick={() => Router.push("https://www.youtube.com/watch?v=dQw4w9WgXcQ")}
+                    onClick={() => Router.push('/forgotpw')}
                   >Forgot Password?</Button>
 
                   <CookieConsent //cookies
