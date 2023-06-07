@@ -74,7 +74,7 @@ export default function CreateAccount() {
             <VStack h={'100%'} minH={'100vh'} minW={'760px'} bg={"#D9D9D9"}>
                 <TopDrawer />
                 <Center mt="3%">
-                    <Box w="60vw" minH="700px" borderRadius={"xl"} shadow="lg" minW={'560px'} bg="#97392F">
+                    <Box w="60vw" minH="730px" borderRadius={"xl"} shadow="lg" minW={'580px'} bg="#97392F">
                         <FormControl isRequired
                             padding={15}
                             justifyContent="center"
