@@ -105,7 +105,7 @@ export default function CreateAccount() {
                                     </Box>
                                     <Box>
                                         <FormLabel variant="floating">Mobile Number</FormLabel>
-                                        <Input placeholder="Mobile Number" bg="white" color={"black"} w="25vw" minW={'150px'} onChange={(e) => {
+                                        <Input type='number' placeholder="Mobile Number" bg="white" color={"black"} w="25vw" minW={'150px'} onChange={(e) => {
                                             setUser({ ...user, mobile_number: e.target.value });
                                         }} />
                                     </Box>
