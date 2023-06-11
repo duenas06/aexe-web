@@ -58,14 +58,14 @@ export default function TermsCondition() {
                             src={'/aexelogo.png'}>
                         </Image>
                         <Center>
-                            <Heading fontSize={'4xl'} color={'#97392F'} alignSelf={'flex-start'}>AEXE App</Heading>
+                            <Heading fontSize={'5xl'} color={'#97392F'} alignSelf={'flex-start'}>AEXE App</Heading>
                         </Center>
                         <Text fontSize={'lg'} color={'black'}>AEXE is an augmented reality-based application instructor where it will helps the gym instructor and its customers to execute the exercise properly.  AEXE offers different exercises that is well-suitable for your body (BMI).
                         </Text>
-                        <Text fontSize={'lg'} color={'black'}>To download the application the needed software requirement are the following:</Text>
-                        <Text fontSize={'lg'} color={'black'}>Operating System:Android 7.0 Nugget to latest</Text>
-                        <Text fontSize={'lg'} color={'black'}>RAM Required:8GB RAM</Text>
-                        <Text fontSize={'lg'} color={'black'}>Camera Required</Text>
+                        <Text fontSize={'lg'} color={'black'} alignSelf={"flex-start"}>To download the application the needed software requirement are the following:</Text>
+                        <Text fontSize={'lg'} color={'black'} alignSelf={"flex-start"}>Operating System: Android 7.0 Nugget to latest</Text>
+                        <Text fontSize={'lg'} color={'black'} alignSelf={"flex-start"}>RAM Required: 8GB RAM</Text>
+                        <Text fontSize={'lg'} color={'black'} alignSelf={"flex-start"}>Camera Required</Text>
                     </VStack>
                 </Flex>
 

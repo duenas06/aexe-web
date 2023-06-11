@@ -70,7 +70,7 @@ export default function Home() {
                         <Divider orientation='horizontal' opacity={0} />
                         <Divider orientation='horizontal' opacity={0} />
                         <Heading textAlign={'center'} fontSize={'40'} w='50vw'>47 CRJM Pilar Morning Breeze Brgy.085, District 1, Caloocan City, Philippines, 1400</Heading>
-                        <Heading textAlign={'center'} fontSize={'30'} w='50vw'>0906244447988</Heading>
+                        <Heading textAlign={'center'} fontSize={'30'} w='50vw'>090624447988</Heading>
                         <Divider orientation='horizontal' opacity={0} />
                         <Heading textAlign={'center'} fontSize={'30'} w='50vw'>8 AM to 5 PM</Heading>
                     </VStack>
