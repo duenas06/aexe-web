@@ -46,21 +46,41 @@ export default function TermsCondition() {
 
                 <HomeNav />
                 <Flex
-                    height="100vh"
+                    height="100%"
                     justifyContent={'center'}
                     alignItems={'center'}>
                     <VStack spacing={7} width={'78%'}>
-                        <Heading fontSize={'5xl'} color={'#97392F'} alignSelf={'flex-start'} mt="5">Terms and Condition</Heading>
-                        <Text fontSize={'lg'} color={'black'}>Essentially, a Terms and Conditions agreement is a contract between your business and the user of your website or app - whether they are an individual or a business. You may see Terms and Conditions agreements referred to as Terms of Service (ToS) or Terms of Use (ToU). Theres no practical difference between these terms and companies use them interchangeably.
-                            Having a Terms and Conditions agreement is not a legal requirement, but having one is important as they protect your business and create a set of rules that anyone using your app or website must agree to</Text>
-                        <Text fontSize={'lg'} color={'black'}>Essentially, a Terms and Conditions agreement is a contract between your business and the user of your website or app - whether they are an individual or a business. You may see Terms and Conditions agreements referred to as Terms of Service (ToS) or Terms of Use (ToU). Theres no practical difference between these terms and companies use them interchangeably.
-                            Having a Terms and Conditions agreement is not a legal requirement, but having one is important as they protect your business and create a set of rules that anyone using your app or website must ntract between your business and the user of your website or app - whether they are an individual.</Text>
-                        <Text fontSize={'lg'} color={'black'}>Having a Terms and Conditions agreement is not a legal requirement, but having one is important as they protect your business and create a set of rules that anyone using your app or website must agree to.</Text>
+                        <Heading fontSize={'5xl'} color={'#97392F'} alignSelf={'flex-start'} mt="10vh">Terms and Condition</Heading>
+                        <Text fontSize={'lg'} color={'black'} alignSelf={'flex-start'} fontWeight={'bold'}>Introduction</Text>
+                        <Text fontSize={'md'} color={'black'}>Methods of Research AEXE: An Augmented Reality Instructor Mobile Application on A Vigorous Lifestyle for Zamora Fitness Drive and Wellness Center built as free application for Zamora Fitness Drive and Wellness Center.</Text>
+                        
+                        <Text fontSize={'lg'} color={'black'} alignSelf={'flex-start'} fontWeight={'bold'}>1. Data Collection</Text>
+                        <Text fontSize={'md'} color={'black'}>This page is to inform visitors about the policies for collecting, using, and disclosing personal information if they choose to use the AEXE application. If the user uses this application, AEXE, then the user agrees to the collection and use of data in accordance with this policy. 
+                            The application collects personal information in order to provide and improve the service. The application does not use or share users’ information with anyone else. 
+                            Unless otherwise defined in this Privacy Policy, the terminology used in this Privacy Policy has the same meaning as in our Terms and Conditions, which are available at AEXE.</Text>
+                        
+                        <Text fontSize={'lg'} color={'black'} alignSelf={'flex-start'} fontWeight={'bold'}>2. Service Description</Text>
+                        <Text fontSize={'md'} color={'black'}>The AEXE application has augmented reality as an instructor, and that is being used to help the users perform the proper way of exercising. The exercises that are being recommended are based on the computed body mass index (BMI). The AEXE application has a profile where users can access personal information. Also, it has a news feed where the user can post pictures and see  other users' posts. Help & Support, where the user can see the location, contact details, email account, and floating chat messaging of the Zamora Fitness Drive and Wellness Center.</Text>
+
+                        <Text fontSize={'lg'} color={'black'} alignSelf={'flex-start'} fontWeight={'bold'}>3. Payment & Subscription term</Text>
+                        <Text fontSize={'md'} color={'black'}>AEXE is not collecting payment upon registration on the application. Payment must be conducted and collected in the gym. After paying, the admin must create an account and give it to the customer who will be using the AEXE application. The user, after paying a membership fee and being registered by the admin, is now officially a member of Zamora Fitness Drive and Wellness Center and can now access the AEXE application. The membership costs:five hundred pesos (500 PHP), which is good for one (1) year, and every session costs thirty pesos (30.00 PHP) per day. For non-members, every session costs only fifty pesos (50.00 PHP). </Text>
+
+                        <Text fontSize={'lg'} color={'black'} alignSelf={'flex-start'} fontWeight={'bold'}>4. User Conduct and Responsibilities</Text>
+                        <Text fontSize={'md'} color={'black'}>The users should be follow the instructions that will appear right before the exercise starts. The users need to follow the proper position and execution during the exercise to avoid injuries.</Text>
+
+                        <Text fontSize={'lg'} color={'black'} alignSelf={'flex-start'} fontWeight={'bold'}>5. Disclaimers & Limitations of Liability </Text>
+                        <Text fontSize={'md'} color={'black'}>AEXE and Zamora Fitness Drive and Wellness Center are not liable for any injuries that the user encounters during exercise inside and outside the gym. The user must be aware of its health condition. If not, it is highly recommended to consult a personal doctor to determine if the user can execute the application's exercises.  </Text>
+
+                        <Text fontSize={'lg'} color={'black'} alignSelf={'flex-start'} fontWeight={'bold'}>6. Termination </Text>
+                        <Text fontSize={'md'} color={'black'}>The AEXE application will terminate an account if the customer of Zamora Fitness Drive and Wellness Center does not renew its membership. However, if the customer avails membership again from the gym, Therefore, the previous account of the user will be retrieved from the archives by the admin. Thus, the customer can use the account again.</Text>
+
+                        <Text fontSize={'lg'} color={'black'} alignSelf={'flex-start'} fontWeight={'bold'}>7. Contact Information </Text>
+                        <Text fontSize={'md'} color={'black'}>The Frequently Asked Questions (FAQs) can be viewed on the website and in the AEXE mobile application. If users have questions regarding anything about the gym and the AEXE application, contact at 090624447988 for mobile and email in zamorafitnessdrive@gmail.com </Text>
 
                         <Divider visibility={'hidden'} />
                         <Heading fontSize={'5xl'} color={'#97392F'} alignSelf={'flex-start'}>Privacy Policy</Heading>
-                        <Text fontSize={'lg'} color={'black'}>Our website application collects personal information, such as name, and email address from users for the purpose of improving customer service, providing a personalized user experience, processing payments, and sending relevant updates. We are committed to safeguarding this information and will not sell, trade, or rent it to third parties. We may share non-personal demographic information with trusted partners and comply with legal requirements. By using our application, you agree to this Privacy Policy. For any inquiries, please contact us at 09062447988 or email us at zamorafitnessdrive@gmail.com.</Text>
-
+                        <Text fontSize={'md'} color={'black'}>Methods of Research AEXE: An Augmented Reality Instructor Mobile Application on A Vigorous Lifestyle for Zamora Fitness Drive and Wellness Center built as free application for Zamora Fitness Drive and Wellness Center. This page is to inform visitors about the policies for collecting, using, and disclosing Personal Information if they choose to use AEXE application. If the user uses this application AEXE, then the user agrees to the collection and use of data in accordance with this policy. The application collects Personal Information in order to provide and improve the Service. The application does not use or share users’ information with anyone else. Unless otherwise defined in this Privacy Policy, the terminology used in this Privacy Policy have the same meaning as in our Terms and Conditions, which are available at AEXE.</Text>
+                        <Text fontSize={'md'} color={'black'}>Our website application collects personal information, such as name, and email address from users for the purpose of improving customer service and providing a personalized user experience. We are committed to safeguarding this information and will not sell, trade, or rent it to third parties. We may share non-personal demographic information with trusted partners and comply with legal requirements. By using our application, you agree to this Privacy Policy. For any inquiries, please contact us at 09062447988 or email us at zamorafitnessdrive@gmail.com.</Text>
 
                     </VStack>
                 </Flex>

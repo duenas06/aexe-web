@@ -83,7 +83,7 @@ export default function Messages() {
                 <Card maxW='sm' variant='elevated' boxShadow="2xl">
                   <CardBody>
                     <Image
-                      src="/fullbody.jpg"
+                      src="/fullbod.jpg"
                       borderRadius='lg' />
                     <Stack mt='6' spacing='3'>
                       <Heading size='md'>Full Body</Heading>
@@ -107,7 +107,7 @@ export default function Messages() {
                 <Card maxW='sm' variant='elevated' boxShadow="2xl">
                   <CardBody>
                     <Image
-                      src="/lowerbody.jpg"
+                      src="/lowerbod.jpg"
                       borderRadius='lg' />
                     <Stack mt='6' spacing='3'>
                       <Heading size='md'>Lower Body</Heading>
@@ -130,7 +130,7 @@ export default function Messages() {
                 <Card maxW='sm' variant='elevated' boxShadow="2xl">
                   <CardBody>
                     <Image
-                      src="/legbutt.jpg"
+                      src="/legnbutt.jpg"
                       borderRadius='lg' />
                     <Stack mt='6' spacing='3'>
                       <Heading size='md'>Leg and Butt</Heading>
@@ -154,7 +154,7 @@ export default function Messages() {
                 <Card maxW='sm' variant='elevated' boxShadow="2xl">
                   <CardBody>
                     <Image
-                      src="/abs.jpg"
+                      src="/img_abs.jpg"
                       borderRadius='lg' />
                     <Stack mt='6' spacing='3'>
                       <Heading size='md'>Abs</Heading>
@@ -202,7 +202,7 @@ export default function Messages() {
                 <Card maxW='sm' variant='elevated' boxShadow="2xl">
                   <CardBody>
                     <Image
-                      src="/shoulderback.jpg"
+                      src="/backnshoulder.jpg"
                       borderRadius='lg' />
                     <Stack mt='6' spacing='3'>
                       <Heading size='md'>Shoulder</Heading>
@@ -225,7 +225,7 @@ export default function Messages() {
                 <Card maxW='sm' variant='elevated' boxShadow="2xl">
                   <CardBody>
                     <Image
-                      src="/senior.jpg"
+                      src="/img_senior.jpg"
                       borderRadius='lg' />
                     <Stack mt='6' spacing='3'>
                       <Heading size='md'>Senior Citizen</Heading>
