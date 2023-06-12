@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 import {
   Heading,
   Center,
@@ -14,78 +14,106 @@ import {
   useToast,
   FormHelperText,
   InputRightElement,
-  Switch
+  Switch,
 } from "@chakra-ui/react";
 
+import { InputGroup } from "@chakra-ui/react";
+import { db } from "../firebase";
 import {
-  InputGroup,
-} from '@chakra-ui/react';
-import { db } from '../firebase'
-import { collection, getDocs, getDoc, where, addDoc, query, doc, setDoc } from "@firebase/firestore";
+  collection,
+  getDocs,
+  getDoc,
+  where,
+  addDoc,
+  query,
+  doc,
+  setDoc,
+} from "@firebase/firestore";
 import { useEffect, useState, useContext } from "react";
-import { useDisclosure } from '@chakra-ui/react'
-import NextLink from 'next/link'
+import { useDisclosure } from "@chakra-ui/react";
+import NextLink from "next/link";
 //import Router from "next/router";
 import Router, { useRouter } from "next/router";
-import React from 'react';
+import React from "react";
 import CookieConsent, { Cookies } from "react-cookie-consent";
-import UserDataContext from '../context/UserDataContext';
-import { makeid } from '../constanst/services/generic';
-
+import UserDataContext from "../context/UserDataContext";
+import { makeid } from "../constanst/services/generic";
 
 export default function Signin() {
   const router = useRouter();
   const [hidePassword, setHidePassword] = useState(true);
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const toast = useToast();
   const userDataContext = useContext(UserDataContext);
 
-
-
-  const cancelRef = React.useRef()
+  const cancelRef = React.useRef();
 
   async function verifyLogin() {
-    const verify_ref = query(  //verifying the login
+    const verify_ref = query(
+      //verifying the login
       collection(db, "users"),
       where("email", "==", email)
     );
 
     const verification = await getDocs(verify_ref);
-    verification.docs.map((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      if (doc.data().length != 0 && doc.data().password == password && doc.data().role == "Admin") {
-        router.push({  //once login direct to the dashboard
-          pathname: "/dashboard",
-        });
-        toast({
-          title: "Log in successful", //login banner chuchu
-          description: "Loading dashboard...",
-          status: "success",
-          duration: 2500,
-          isClosable: true,
-          position: "bottom-right",
-        });
-        userDataContext.setUserData({
-          dataObject: doc.data(),
-        });
-        localStorage.setItem("email", JSON.stringify(doc.data()));
-      } else {
-        toast({
+    console.log(verification.empty);
+    verification.empty === true
+      ? (toast({
           title: "Log in failed", //if the user input is invalid
           description: "invalid input",
           status: "error",
           duration: 2500,
           isClosable: true,
           position: "bottom-right",
+        }),
+        Router.reload(window.location.pathname))
+      : verification.docs.map((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          if (
+            doc.data().length != 0 &&
+            doc.data().password == password &&
+            doc.data().role == "Admin"
+          ) {
+            router.push({
+              //once login direct to the dashboard
+              pathname: "/dashboard",
+            });
+            toast({
+              title: "Log in successful", //login banner chuchu
+              description: "Loading dashboard...",
+              status: "success",
+              duration: 2500,
+              isClosable: true,
+              position: "bottom-right",
+            });
+            userDataContext.setUserData({
+              dataObject: doc.data(),
+            });
+            localStorage.setItem("email", JSON.stringify(doc.data()));
+          } else {
+            toast({
+              title: "Log in failed", //if the user input is invalid
+              description: "invalid input",
+              status: "error",
+              duration: 2500,
+              isClosable: true,
+              position: "bottom-right",
+            });
+            Router.reload(window.location.pathname);
+            toast({
+              title: "Log in failed", //if the user input is invalid
+              description: "invalid input",
+              status: "error",
+              duration: 2500,
+              isClosable: true,
+              position: "bottom-right",
+            });
+          }
         });
-        Router.reload(window.location.pathname);
-      }
-    });
     setEmail("");
     setPassword("");
   }
-
 
   return (
     <>
@@ -96,24 +124,20 @@ export default function Signin() {
       </Head>
 
       <Box
-        bgImage={'/gymhd.jpg'} //bg image
+        bgImage={"/gymhd.jpg"} //bg image
         height="100vh"
         width="100vw"
         bgSize="cover"
       >
-
-        <Flex
-          {...styleProps.indexWrapper}>
+        <Flex {...styleProps.indexWrapper}>
           <Center>
             <Flex flexDirection="column" {...styleProps.formWrapper}>
-              <VStack
-                paddingTop="1vh"
-              >
+              <VStack paddingTop="1vh">
                 <Image
-                  borderRadius='full'
-                  boxSize='100px'
-                  src='/aexelogo.png' //logo
-                  alt='logo'
+                  borderRadius="full"
+                  boxSize="100px"
+                  src="/aexelogo.png" //logo
+                  alt="logo"
                   marginBottom="3"
                 />
                 <Box>
@@ -136,54 +160,76 @@ export default function Signin() {
                     placeholder={"Password"} //pw user input
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <InputRightElement ><Switch
-                    padding={"1"}
-                    colorScheme={"cyan"}
-                    size={"md"}
-                    onChange={() => setHidePassword(!hidePassword)}
-                  /> </InputRightElement>
+                  <InputRightElement>
+                    <Switch
+                      padding={"1"}
+                      colorScheme={"cyan"}
+                      size={"md"}
+                      onChange={() => setHidePassword(!hidePassword)}
+                    />{" "}
+                  </InputRightElement>
                 </InputGroup>
                 <Box>
-
                   <Button
-                    colorScheme='blackAlpha'
-                    variant='link' size="sm"
-                    onClick={() => Router.push('/forgotpw')}
-                  >Forgot Password?</Button>
+                    colorScheme="blackAlpha"
+                    variant="link"
+                    size="sm"
+                    onClick={() => Router.push("/forgotpw")}
+                  >
+                    Forgot Password?
+                  </Button>
 
                   <CookieConsent //cookies
                     debug={true}
                     location="bottom"
                     style={{
-                      background: '#8FAADC', color: 'black', fontSize: "1vw", textAlign: "center",
-                      borderRadius: "15px", width: "35vw", height: "18vh", marginBottom: "25px", marginLeft: "20px"
+                      background: "#8FAADC",
+                      color: "black",
+                      fontSize: "1vw",
+                      textAlign: "center",
+                      borderRadius: "15px",
+                      width: "35vw",
+                      height: "18vh",
+                      marginBottom: "25px",
+                      marginLeft: "20px",
                     }}
-                    buttonStyle={{ background: '#97302F', color: 'white', borderRadius: "10px", marginBottom: "50%" }}
-                    onAccept={() => { alert("Yummy, thanks!") }}
+                    buttonStyle={{
+                      background: "#97302F",
+                      color: "white",
+                      borderRadius: "10px",
+                      marginBottom: "50%",
+                    }}
+                    onAccept={() => {
+                      alert("Yummy, thanks!");
+                    }}
                   >
-                    <Box
-                      boxSize='20%'
-                      marginLeft="13vw"
-                      alignContent="center">
-                      <Image src="cookies.png" alt='img' />
+                    <Box boxSize="20%" marginLeft="13vw" alignContent="center">
+                      <Image src="cookies.png" alt="img" />
                     </Box>
-                    This site uses cookies to ensure you get the best experience.
+                    This site uses cookies to ensure you get the best
+                    experience.
                   </CookieConsent>
 
                   <HStack //stack for login
                     marginTop={"20px"}
                     width="20vw"
                     justifyContent="center"
-                    spacing={20}>
-
+                    spacing={20}
+                  >
                     <Button //login btn
-                      colorScheme='red'
+                      colorScheme="red"
                       ref={cancelRef}
                       width="8vw"
                       alignSelf={"flex-start"}
-                      isDisabled={email === "" ? password === "" ? true : false : false}
-                      onClick={() => { verifyLogin() }}
-                    >Login</Button>
+                      isDisabled={
+                        email === "" ? (password === "" ? true : false) : false
+                      }
+                      onClick={() => {
+                        verifyLogin();
+                      }}
+                    >
+                      Login
+                    </Button>
                   </HStack>
                 </Box>
               </VStack>
@@ -192,7 +238,7 @@ export default function Signin() {
         </Flex>
       </Box>
     </>
-  )
+  );
 }
 
 const styleProps = {
@@ -211,7 +257,5 @@ const styleProps = {
     padding: "2vh",
     color: "white",
     bgColor: "#E1CBA5",
-
-
-  }
-}
+  },
+};
