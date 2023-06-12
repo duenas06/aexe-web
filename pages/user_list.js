@@ -379,7 +379,7 @@ export default function Dashboard() {
                 </TableContainer>
               </Box>
             </VStack>
-            // Archived Accounts
+            
             <VStack>
               <HStack justifyContent="space-between" w="70vw" mt="2%" px="2">
                 <Heading color={"#97392F"}>Archived Accounts</Heading>
