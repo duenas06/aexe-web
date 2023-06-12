@@ -139,9 +139,6 @@ export default function Dashboard() {
                 </CardBody>
 
               </Card>
-              <Center>
-
-              </Center>
 
 
               <HStack align={'start'} width="60vw" justifyContent={'space-between'}>
@@ -169,21 +166,19 @@ export default function Dashboard() {
 
                 <Card
                   minH="30vh"
-                  size="lg"
                   variant="outline"
-                  shadow="below"
                   width="32vw"
                   padding={'1vw'}
                   paddingInline={'3vw'}
                   bg="#97302F"
-                  h="43vh"
+                  h="47vh"
                   color={'white'}
                   spacing="5"
                   outlineColor="gray.900">
                   <VStack >
                     <Text alignSelf={'flex-start'} fontSize={'1.3vw'} fontWeight={'bold'}>{user?.first_name + "'s Posts"}</Text>
                     <Divider />
-                    <VStack overflowY={'scroll'} minH="30vh" h="25vh" w="30vw">
+                    <VStack overflowY={'scroll'} minH="30vh" h="20vh" w="30vw">
                       {Posts?.map((item, index) => {
                         return (
                           <>

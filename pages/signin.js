@@ -42,6 +42,7 @@ import { makeid } from "../constanst/services/generic";
 export default function Signin() {
   const router = useRouter();
   const [hidePassword, setHidePassword] = useState(true);
+  const [user, setUser] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const toast = useToast();
@@ -50,29 +51,29 @@ export default function Signin() {
   const cancelRef = React.useRef();
 
   async function verifyLogin() {
+    const email = user?.email;
     const verify_ref = query(
       //verifying the login
       collection(db, "users"),
-      where("email", "==", email)
+      where("email", "==", user?.email)
     );
 
     const verification = await getDocs(verify_ref);
     console.log(verification.empty);
     verification.empty === true
-      ? (toast({
+      ? toast({
           title: "Log in failed", //if the user input is invalid
           description: "invalid input",
           status: "error",
-          duration: 2500,
+          duration: 4000,
           isClosable: true,
           position: "bottom-right",
-        }),
-        Router.reload(window.location.pathname))
+        })
       : verification.docs.map((doc) => {
           // doc.data() is never undefined for query doc snapshots
           if (
             doc.data().length != 0 &&
-            doc.data().password == password &&
+            doc.data().password == user?.password &&
             doc.data().role == "Admin"
           ) {
             router.push({
@@ -83,36 +84,38 @@ export default function Signin() {
               title: "Log in successful", //login banner chuchu
               description: "Loading dashboard...",
               status: "success",
-              duration: 2500,
+              duration: 4000,
               isClosable: true,
               position: "bottom-right",
             });
             userDataContext.setUserData({
               dataObject: doc.data(),
             });
-            localStorage.setItem("email", JSON.stringify(doc.data()));
+            // localStorage.setItem("email", JSON.stringify(doc.data()));
           } else {
             toast({
               title: "Log in failed", //if the user input is invalid
               description: "invalid input",
               status: "error",
-              duration: 2500,
+              duration: 4000,
               isClosable: true,
               position: "bottom-right",
             });
-            Router.reload(window.location.pathname);
             toast({
               title: "Log in failed", //if the user input is invalid
               description: "invalid input",
               status: "error",
-              duration: 2500,
+              duration: 4000,
               isClosable: true,
               position: "bottom-right",
             });
           }
         });
-    setEmail("");
-    setPassword("");
+
+    setUser({
+      email: "",
+      password: "",
+    });
   }
 
   return (
@@ -145,9 +148,12 @@ export default function Signin() {
                     shadow={"inner"}
                     bg={"white"}
                     color={"black"}
+                    type="email"
                     width="20vw"
                     placeholder={"Email/Username"} //email user input
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) =>
+                      setUser({ ...user, email: e.target.value })
+                    }
                   />
                 </Box>
                 <InputGroup>
@@ -158,7 +164,9 @@ export default function Signin() {
                     color={"black"}
                     width="20vw"
                     placeholder={"Password"} //pw user input
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) =>
+                      setUser({ ...user, password: e.target.value })
+                    }
                   />
                   <InputRightElement>
                     <Switch
@@ -222,7 +230,11 @@ export default function Signin() {
                       width="8vw"
                       alignSelf={"flex-start"}
                       isDisabled={
-                        email === "" ? (password === "" ? true : false) : false
+                        user?.email === ""
+                          ? user?.password === ""
+                            ? true
+                            : false
+                          : false
                       }
                       onClick={() => {
                         verifyLogin();

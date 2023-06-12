@@ -51,7 +51,7 @@ export default function CreateAccount() {
             setUser({ ...user, bmi: bmi.toFixed(2) })
             console.log(newUser)
             if (user != {}) {
-                const add = await addData({ path: "users", data: { ...user, bmi: bmi.toFixed(2) } })
+                const add = await addData({ path: "users", data: { ...user, bmi: bmi.toFixed(2), status: "Active" } })
                 router.reload(window.location.pathname);
                 toast({
                     title: "Created successful",
@@ -64,6 +64,14 @@ export default function CreateAccount() {
             }
         }
     }
+
+    const handleInputChange = (event) => {
+    const inputValue = event.target.value;
+    const filteredValue = inputValue.replace(/[^a-zA-Z]/g, ''); // Remove any non-letter characters
+
+    event.target.value = filteredValue;
+  }
+
     return (
         <>
             <Head>
@@ -85,12 +93,14 @@ export default function CreateAccount() {
                                     <Box>
                                         <FormLabel variant="floating">First Name</FormLabel>
                                         <Input placeholder="First Name" bg="white" color={"black"} w="25vw" minW={'150px'} onChange={(e) => {
+                                            handleInputChange(e)
                                             setUser({ ...user, first_name: e.target.value });
                                         }} />
                                     </Box>
                                     <Box>
                                         <FormLabel variant="floating">Last Name</FormLabel>
                                         <Input placeholder="Last Name" bg="white" color={"black"} w="25vw" minW={'150px'} onChange={(e) => {
+                                             handleInputChange(e)
                                             setUser({ ...user, last_name: e.target.value });
                                         }} />
                                     </Box>

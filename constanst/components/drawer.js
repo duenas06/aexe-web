@@ -116,9 +116,9 @@ export default function TopDrawer() {
             </DrawerHeader>
 
             <DrawerBody bgColor='#ffffff '>
-              {tabs.map(data => {
+              {tabs.map((data, key) => {
                 return (
-                  <Flex flexDir="column" align="center">
+                  <Flex key={key} flexDir="column" align="center">
                     <NextLink href={data.path} passHref>
                       <Button as="a"
                         variant="ghost"
