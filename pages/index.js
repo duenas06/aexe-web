@@ -124,7 +124,7 @@ export default function Home() {
           <Center>
             <VStack spacing={10}>
               <Image
-                boxSize={"20vw"}
+                boxSize={"25vw"}
                 w="90vw"
                 objectFit={"contain"}
                 src={"/zamoragym.jpg"}
