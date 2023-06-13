@@ -100,7 +100,7 @@ export default function Home() {
                 <img src="/firstslide.jpg" />
               </div>
               <div>
-                <img src="/secondslide.png" />
+                <img src="/secondslide.jpg" />
               </div>
               <div>
                 <img src="/thirdslide.jpg" />
