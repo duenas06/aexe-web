@@ -116,7 +116,7 @@ export default function UserInquiries() {
                         </AccordionButton>
                       </h2>
                       <AccordionPanel>
-                        It will start at 8am onwards and will be closed at 5pm
+                        It will start at 8am onwards and will be closed at 10pm
                       </AccordionPanel>
                     </AccordionItem>
                   </Accordion>
