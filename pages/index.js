@@ -54,7 +54,7 @@ export default function Home() {
         <HomeNav />
         <Flex
           bgImage={
-            "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(zamora.jpg)"
+            "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(zamoragym.jpg)"
           }
           height="100vh"
           bgColor={"black"}
@@ -124,7 +124,7 @@ export default function Home() {
           <Center>
             <VStack spacing={10}>
               <Image
-                boxSize={"50vw"}
+                boxSize={"30vw"}
                 w="90vw"
                 objectFit={"contain"}
                 src={"/zamoragym.jpg"}
