@@ -127,7 +127,7 @@ export default function Home() {
                 boxSize={"20vw"}
                 w="90vw"
                 objectFit={"contain"}
-                src={"/bg10.png"}
+                src={"/image.png"}
               ></Image>
 
               <HStack justifyContent={"space-between"} w="67.4vw">
