@@ -54,7 +54,7 @@ export default function Home() {
         <HomeNav />
         <Flex
           bgImage={
-            "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(bg8.png)"
+            "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(zamoragym.jpg)"
           }
           height="100vh"
           bgColor={"black"}
@@ -77,7 +77,7 @@ export default function Home() {
             </Heading>
             <Divider orientation="horizontal" opacity={0} />
             <Heading textAlign={"center"} fontSize={"1.5vw"} w="50vw">
-              8 AM to 5 PM
+              8 AM to 10 PM
             </Heading>
           </VStack>
         </Flex>
@@ -97,13 +97,13 @@ export default function Home() {
 
             <Carousel autoPlay>
               <div>
-                <img src="/abs.jpg" />
+                <img src="/firstslide.jpg" />
               </div>
               <div>
-                <img src="/chest.png" />
+                <img src="/secondslide.png" />
               </div>
               <div>
-                <img src="/fullbody.jpg" />
+                <img src="/thirdslide.jpg" />
               </div>
             </Carousel>
           </HStack>
