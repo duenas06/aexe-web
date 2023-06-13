@@ -105,6 +105,12 @@ export default function Home() {
               <div>
                 <img src="/thirdslide.jpg" />
               </div>
+              <div>
+                <img src="/fourthslide.jpg" />
+              </div>
+              <div>
+                <img src="/fifthslide.jpg" />
+              </div>
             </Carousel>
           </HStack>
         </Center>
