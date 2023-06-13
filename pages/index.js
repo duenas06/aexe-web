@@ -73,7 +73,7 @@ export default function Home() {
               Philippines, 1400
             </Heading>
             <Heading textAlign={"center"} fontSize={"1.6vw"} w="50vw">
-              0906244447988
+              09062447988
             </Heading>
             <Divider orientation="horizontal" opacity={0} />
             <Heading textAlign={"center"} fontSize={"1.5vw"} w="50vw">
